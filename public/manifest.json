@@ -1,0 +1,56 @@
+{
+  "name": "CMS",
+  "version": "1.0v",
+  "manifest_version": 2,
+
+  "description": "CMS",
+  "developer": {
+    "name": "Stanislav Mintus",
+    "url": "http://instagram.com/mintusyaka"
+  },
+  "default_locale": "en",
+
+  "short_name": "CMS",
+  "theme_color": "rgb(255,204,204)",
+  "background_color": "rgb(255,255,255)",
+  "display": "standalone",
+  "orientation": "landscape",
+  "start_url": "index.html",
+  "icons": [
+      {
+        "src": "img/avatar.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "img/notifications2.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "maskable"
+      }
+  ],
+  "screenshots": [
+    {
+      "src": "img/students.webp",
+      "sizes": "1920x923",
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "Homescreen (Students page) of CMS"
+    },
+    {
+      "src": "img/students_iphoneSE.webp",
+      "sizes": "1042x1853",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Homescreen (Students page) of CMS"
+    }
+  ],
+  "sandbox": {
+    "pages": [
+      "pages/dashboard.html",
+      "pages/tasks.html"
+    ]
+  }
+}
+
+    

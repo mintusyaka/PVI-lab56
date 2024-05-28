@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Author: Mintus Stanislav" />
+    <link rel="stylesheet" href="../styles/smartphone-style.css" />
+    <link rel="stylesheet" href="../styles/profile-dropdown.css" />
+    <link rel="stylesheet" href="../styles/notifications-dropdown.css" />
+    <!-- <script
+      src="https://kit.fontawesome.com/7e130c80aa.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <title>Students</title>
+  </head>
+  <body>
+    <dialog id="add-new-student">
+      <form method="dialog" id="add-new-student-form" onsubmit="return false">
+        <div class="header-of-dialog">
+          <h2>Add student</h2>
+          <button type="button" class="close">X</button>
+        </div>
+        <div class="form">
+          <table>
+            <tr>
+              <td><p>Group</p></td>
+              <td>
+                <select name="group">
+                  <option value="1">PZ-16</option>
+                  <option value="2">PZ-26</option>
+                  <option value="3">BD-26</option>
+                  <option value="4">PZ-11</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><p>First Name</p></td>
+              <td>
+                <input
+                  type="text"
+                  name="first-name"
+                  required
+                  aria-label="First Name"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><p>Last Name</p></td>
+              <td>
+                <input
+                  type="text"
+                  name="second-name"
+                  required
+                  aria-label="Second Name"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><p>Sex</p></td>
+              <td>
+                <select name="sex">
+                  <option value="1">Male</option>
+                  <option value="2">Female</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><p>Birthday</p></td>
+              <td>
+                <input
+                  type="date"
+                  name="birthday"
+                  required
+                  aria-label="Birthday"
+                />
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="footer-of-dialog">
+          <button type="submit" class="ok" id="btnOkAddStudent">CREATE</button>
+          <button type="button" class="close">CANCEL</button>
+        </div>
+      </form>
+    </dialog>
+    <header>
+      <h1>CMS</h1>
+      <ul>
+        <li>
+          <div class="dropdown">
+            <button type="button" id="btnNotification">
+              <img
+                src="../img/notifications2.png"
+                class="notifications"
+                alt="Notifications"
+              />
+            </button>
+            <div class="notifications-dropdown">
+              <a href="#">
+                <div class="msgbox">
+                  <img
+                    src="../img/avatar.png"
+                    class="profile-img"
+                    alt="Profile image"
+                  />
+                  Admin
+                </div>
+                <div class="msg">Hello Stanislav!</div>
+              </a>
+              <a href="#">
+                <div class="msgbox">
+                  <img
+                    src="../img/avatar.png"
+                    class="profile-img"
+                    alt="Profile image"
+                  />
+                  Bobalo. Y.
+                </div>
+                <div class="msg">message</div>
+              </a>
+            </div>
+          </div>
+          <!-- <div class="notifications-dropdown">
+              <a href="#">a</a>
+              <a href="#">b</a>
+            </div> -->
+          <!-- <i class="fa-regular fa-bell"></i> -->
+        </li>
+        <li class="profile">
+          <!-- <i class="fa-regular fa-user"></i> -->
+          <div class="dropdown">
+            <img
+              src="../img/avatar.png"
+              class="profile-img"
+              alt="Profile IMG"
+            />
+            <div class="profile-dropdown-options">
+              <a href="#">profile</a>
+              <a href="#">log out</a>
+            </div>
+          </div>
+          <a class="profile-item" href="#">Stanislav Mintus</a>
+        </li>
+      </ul>
+    </header>
+    <main>
+      <div class="nav-container">
+        <nav>
+          <ul>
+            <li><a href="dashboard.html" class="this-page">Dashboard</a></li>
+            <li><a href="../index.html">Students</a></li>
+            <li><a href="tasks.html">Tasks</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="table-container">
+        <h2>Dashboard</h2>
+      </div>
+    </main>
+  </body>
+</html>

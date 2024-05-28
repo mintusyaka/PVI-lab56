@@ -1,0 +1,27 @@
+{
+  "name": "CMS",
+  "version": "1.0.0",
+  "description": "CMS",
+  "author": "Mintus Stanislav",
+  "type": "module",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-generator": "^4.16.1",
+    "jquery": "^3.7.1",
+    "jsdom": "^24.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.6.2",
+    "mongoose": "^8.4.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.9.7",
+    "socket.io": "^4.7.5",
+    "util": "^0.12.5"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  }
+}

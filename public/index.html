@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Author: Mintus Stanislav" />
+    <meta name="theme-color", content="rgb(255,204,204)">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/profile-dropdown.css" />
+    <link rel="stylesheet" href="styles/notifications-dropdown.css" />
+    <link rel="stylesheet" href="styles/smartphone-style.css" />
+    <link rel="stylesheet" href="styles/modal-style.css" />
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+      <link rel="manifest" href="img/site.webmanifest">
+      <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#8a8a8a">
+      <link rel="shortcut icon" href="img/favicon.ico">
+      <meta name="apple-mobile-web-app-title" content="CMS">
+      <meta name="application-name" content="CMS">
+      <meta name="msapplication-TileColor" content="#ffcccc">
+      <meta name="msapplication-config" content="/img/browserconfig.xml">
+      <meta name="theme-color" content="#ffffff">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- <script
+      src="https://kit.fontawesome.com/7e130c80aa.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <title>Students</title>
+  </head>
+  <body>
+    <!-- Модальне вікно видалення студента -->
+    <div class="modal fade" id="delete-student" role="dialog">
+      <div class="modal-content">
+  
+        <!-- Modal content-->
+        
+          <div class="header-of-dialog modal-header">
+            <h2>Delete student</h2>
+            <!-- <button type="button" class="close" data-dismiss="modal">X</button> -->
+            <button type="button" class="close-dialog">&times;</button>
+          </div>
+  
+          <div class="form"></div>
+
+          <div class="footer-of-dialog modal-footer">
+            <button type="submit" class="ok" id="btnOkDeleteStudent">DELETE</button>
+            <button type="button" class="close-dialog">CANCEL</button>
+          </div>
+        
+      </div>
+    </div>
+
+    <!-- Модальне вікно додавання/редагування студента -->
+    <div class="modal fade" id="modal-add-edit-student" role="dialog">
+      <div class="modal-content">
+  
+        <!-- Modal content-->
+        
+          <div class="header-of-dialog modal-header">
+            <h2 class="dialog-name">Add Student</h2>
+            <button type="button" class="close-dialog">&times;</button>
+          </div>
+  
+          <div class="modal-body">
+          <form method="post" class='form' role="form">
+            <table>
+              <tr>
+                <input type="hidden">
+              </tr>
+              <tr>
+                <td>
+                  <span>Group</span>
+                </td>
+                <td>
+                  <select id="input-group" name="group">
+                    <option>ПЗ-26</option>
+                    <option>ПЗ-27</option>
+                    <option>ПП-27</option>
+                  </select>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <span>First name</span>
+                </td>
+                <td>
+                  <input type="text" id="input-first-name" name="first-name" autocomplete="name" required>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <span>Second name</span>
+                </td>
+                <td>
+                  <input type="text" id="input-second-name" name="second-name" required>
+                </td>
+              </tr>
+
+              <tr><td><p class="invalid-msg enter-name-msg">enter name!</p></td></tr>
+
+              <tr>
+                <td>
+                  <span>Gender</span>
+                </td>
+                <td>
+                  <select id="input-gender" name="gender">
+                    <option>Male</option>
+                    <option>Female</option>
+                  </select>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <span>Birthday</span>
+                </td>
+                <td>
+                  <input type="date" id="input-birthday" name="birthday" required>
+                </td>
+              </tr>
+
+              <tr><td><p class="invalid-msg enter-birthday-msg">choose birthday!</p></td></tr>
+
+            </table>
+            
+          </form>
+          </div>
+
+          <div class="footer-of-dialog modal-footer">
+            <button type="submit" class="ok" id="btnOkAddEditStudent">ADD</button>
+            <button type="button" class="close-dialog">CANCEL</button>
+          </div>
+          
+        
+      </div>
+    </div>
+
+    <!-- Модальне вікно зміни акаунта -->
+    <div class="modal fade" id="modal-change-account" role="dialog">
+      <div class="modal-content">
+  
+        <!-- Modal content-->
+        
+          <div class="header-of-dialog modal-header">
+            <h2 class="dialog-name">Change Account</h2>
+            <button type="button" class="close-dialog">&times;</button>
+          </div>
+  
+          <div class="modal-body">
+          <form method="post" class='form' role="form">
+            <table>
+              <tr>
+                <td>
+                  <span>First name</span>
+                </td>
+                <td>
+                  <input type="text" id="input-first-name-change" name="first-name" autocomplete="name" required>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <span>Second name</span>
+                </td>
+                <td>
+                  <input type="text" id="input-second-name-change" name="second-name" required>
+                </td>
+              </tr>
+
+              <tr><td><p class="invalid-msg enter-name-msg">enter name!</p></td></tr>
+            </table>
+            
+          </form>
+          </div>
+
+          <div class="footer-of-dialog modal-footer">
+            <button type="submit" class="ok" id="btnOkChangeAccount">CHANGE</button>
+            <button type="button" class="close-dialog">CANCEL</button>
+          </div>
+          
+        
+      </div>
+    </div>
+
+
+    <header>
+      <h1>CMS</h1>
+      <ul>
+        <li>
+          <div class="dropdown">
+            <button type="button" id="btnNotification">
+              <img
+                src="img/notifications2.png"
+                class="notifications"
+                alt="Notifications"
+              />
+            </button>
+            <div class="notifications-dropdown">
+              <a href="./pages/chat.html">
+                <div class="msgbox">
+                  <img
+                    src="img/avatar.png"
+                    class="profile-img"
+                    alt="Profile image"
+                  />
+                  Admin
+                </div>
+                <div class="msg">Hello Stanislav!</div>
+              </a>
+              <a href="#">
+                <div class="msgbox">
+                  <img
+                    src="img/avatar.png"
+                    class="profile-img"
+                    alt="Profile image"
+                  />
+                  Bobalo. Y.
+                </div>
+                <div class="msg">message</div>
+              </a>
+            </div>
+          </div>
+          <!-- <i class="fa-regular fa-bell"></i> -->
+        </li>
+        <li class="profile">
+          <!-- <i class="fa-regular fa-user"></i> -->
+          <div class="dropdown">
+            <img src="img/avatar.png" class="profile-img" alt="Profile IMG" />
+            <div class="profile-dropdown-options">
+              <a href="#" onclick="changeAccount()">change account</a>
+              <a href="" id="btnLogOut">log out</a>
+            </div>
+          </div>
+          <a class="profile-item" id="active-user-name" href="#">Stanislav Mintus</a>
+        </li>
+      </ul>
+    </header>
+
+
+    <main>
+      <div class="nav-container">
+        <nav>
+          <ul>
+            <li><a href="pages/dashboard.html">Dashboard</a></li>
+            <li><a href="index.html" class="this-page">Students</a></li>
+            <li><a href="pages/tasks.html">Tasks</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="table-container">
+        <h2>Students</h2>
+        <button type="button" id="btnAdd" onclick="addStudent(this)">+</button>
+        <table id="table-students">
+          <tr>
+            <th>
+              <input
+                type="checkbox"
+                name="head-checkbox"
+                aria-label="checkbox"
+              />
+            </th>
+            <th>Group</th>
+            <th>Name</th>
+            <th>Sex</th>
+            <th>Birthday</th>
+            <th>Status</th>
+            <th>Options</th>
+          </tr>
+          </table>
+      </div>
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.6/dayjs.min.js"></script>
+    <!-- <script src="./scripts/script.js"></script>
+    <script src="./scripts/modal-add-edit.js"></script> -->
+    <script src="scripts/delete-student.js"></script>
+    <script src="scripts/add-student.js"></script>
+    <script type="module" src="scripts/handle-get-students.js"></script>
+    <script src="scripts/change-account.js"></script>
+    <!-- <script type="module">
+      import { io } from "https://cdn.socket.io/4.7.5/socket.io.esm.min.js";
+    </script> -->
+    <script type="module" src="scripts/socket.js"></script>
+    
+  </body>
+</html> 

@@ -1,0 +1,328 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 24px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+}
+
+a:link {
+  color: black;
+}
+
+/* header */
+header {
+  background: #fcc;
+  width: 100%;
+
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  border-bottom: 5px solid rgb(255, 171, 171);
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: space-around;
+}
+
+header ul li {
+  display: inline-block;
+  align-items: center;
+  margin: 10px 10px;
+}
+
+header ul li a {
+  display: none;
+}
+
+header ul li div {
+  display: flex;
+  align-items: center;
+}
+
+.profile-img {
+  height: 35px;
+  margin: 0;
+}
+
+.notifications {
+  height: 25px;
+  margin: 0;
+  border-radius: 0.5rem;
+  animation-name: blinking;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  /* position: absolute; */
+}
+
+@keyframes blinking {
+  50% {
+    opacity: 50%;
+  }
+}
+
+#btnNotification {
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  background-color: inherit;
+  /* position: relative; */
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.nav-container {
+  width: 100%;
+}
+
+main div nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main nav li {
+  list-style: none;
+}
+
+.this-page {
+  font-weight: bold;
+}
+
+.table-container {
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.table-div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+td,
+th {
+  border: 1px solid black;
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+td {
+  text-align: center;
+}
+
+.status-bull {
+  padding: 0;
+  font-size: 30px;
+  color: lightgray;
+}
+
+.status-bull.active {
+  color: greenyellow;
+}
+
+td div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btnDelete,
+.btnEdit {
+  cursor: pointer;
+  appearance: none;
+  background-color: inherit;
+  width: 15px;
+  height: 15px;
+  /* margin: 0 10px; */
+}
+
+span {
+  font-size: 30px;
+}
+
+td div button {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  margin: 5px;
+}
+
+#btnAdd {
+  cursor: pointer;
+  appearance: none;
+  background-color: inherit;
+  width: 15px;
+  height: 15px;
+  margin-left: auto;
+}
+
+.table-container button {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  margin: 5px;
+}
+
+@media only screen and (min-width: 768px) {
+  h2 {
+    font-size: 36px;
+    text-align: left;
+  }
+
+  header ul li a {
+    display: contents;
+  }
+
+  .profile {
+    display: flex;
+  }
+
+  .profile-img {
+    padding: 0 10px;
+  }
+
+  main {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .nav-container {
+    width: 20%;
+  }
+
+  main div nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px;
+  }
+
+  table {
+    border-collapse: collapse;
+    border: 2px solid black;
+    margin-top: 30px;
+  }
+
+  td,
+  th {
+    border: 2px solid black;
+    box-sizing: border-box;
+    padding: 10px 10px;
+    font-size: 16px;
+  }
+
+  td {
+    padding: 10px 0px;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  input[type="checkbox"] {
+    transform: scale(1.5);
+  }
+
+  .table-container {
+    margin: 30px;
+    width: 70%;
+  }
+
+  .status-bull {
+    padding: 0;
+    font-size: 55px;
+    color: lightgray;
+  }
+
+  .status-bull.active {
+    color: greenyellow;
+  }
+
+  td div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  .btnDelete,
+  .btnEdit {
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+    width: 35px;
+    height: 35px;
+  }
+
+  span {
+    font-size: 30px;
+  }
+
+  td div button {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+  }
+
+  #btnAdd {
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+    width: 35px;
+    height: 35px;
+    margin-left: auto;
+  }
+
+  .table-container button {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    margin: 5px;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  td {
+    padding: 10px 30px;
+    text-align: center;
+    font-size: 24px;
+  }
+}
